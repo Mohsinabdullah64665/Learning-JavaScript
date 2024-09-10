@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Changing Background color on Click</title>
+    <!-- ++++++ Css Style for button ++++++ -->
+    <style>
+      button
+      {
+        padding: 16px;
+        border-radius: 20px;
+        background-color: cadetblue;
+        border: none;
+        color: black;
+        cursor: pointer;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <!-- +++++++++++++ html part of button +++++++++++-->
+    <button>Click Me to change Background Color</button>
+  </body>
+  <!--+++++++++++++ javascript part of button clicking ++++++++++-->
+  <script>
+    const btn = document.querySelector('button');
+    function randomNumber(number)
+    {
+      return Math.floor(Math.random()*(number + 1))
+    }
+    btn.addEventListener('click',() =>
+  {
+    const rndcol = `rgb(${randomNumber(255)} ${randomNumber(255)} ${randomNumber(255)})`;
+    const body = document.querySelector('body');
+    body.style.backgroundColor = rndcol
+  })
+  </script>
+</html>
